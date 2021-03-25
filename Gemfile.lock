@@ -1,0 +1,76 @@
+PATH
+  remote: .
+  specs:
+    crawler (0.1.0)
+
+GEM
+  remote: https://rubygems.org/
+  specs:
+    celluloid (0.18.0)
+      timers (~> 4)
+    connection_pool (2.2.3)
+    diff-lcs (1.4.4)
+    domain_name (0.5.20190701)
+      unf (>= 0.0.5, < 1.0.0)
+    http-cookie (1.0.3)
+      domain_name (~> 0.5)
+    mechanize (2.7.7)
+      domain_name (~> 0.5, >= 0.5.1)
+      http-cookie (~> 1.0)
+      mime-types (>= 1.17.2)
+      net-http-digest_auth (~> 1.1, >= 1.1.1)
+      net-http-persistent (>= 2.5.2)
+      nokogiri (~> 1.6)
+      ntlm-http (~> 0.1, >= 0.1.1)
+      webrick (~> 1.7)
+      webrobots (>= 0.0.9, < 0.2)
+    mime-types (3.3.1)
+      mime-types-data (~> 3.2015)
+    mime-types-data (3.2021.0225)
+    minitest (5.11.3)
+    net-http-digest_auth (1.4.1)
+    net-http-persistent (4.0.1)
+      connection_pool (~> 2.2)
+    nokogiri (1.11.2-x64-mingw32)
+      racc (~> 1.4)
+    ntlm-http (0.1.1)
+    racc (1.5.2)
+    rake (13.0.3)
+    redis (4.2.5)
+    rspec (3.10.0)
+      rspec-core (~> 3.10.0)
+      rspec-expectations (~> 3.10.0)
+      rspec-mocks (~> 3.10.0)
+    rspec-core (3.10.1)
+      rspec-support (~> 3.10.0)
+    rspec-expectations (3.10.1)
+      diff-lcs (>= 1.2.0, < 2.0)
+      rspec-support (~> 3.10.0)
+    rspec-mocks (3.10.2)
+      diff-lcs (>= 1.2.0, < 2.0)
+      rspec-support (~> 3.10.0)
+    rspec-support (3.10.2)
+    sqlite3 (1.4.2)
+    timers (4.3.3)
+    unf (0.1.4)
+      unf_ext
+    unf_ext (0.0.7.7-x64-mingw32)
+    webrick (1.7.0)
+    webrobots (0.1.2)
+
+PLATFORMS
+  x64-mingw32
+
+DEPENDENCIES
+  celluloid
+  crawler!
+  mechanize
+  minitest (~> 5.0)
+  nokogiri
+  rake (~> 13.0)
+  redis
+  rspec (~> 3.0)
+  sqlite3
+
+BUNDLED WITH
+   2.2.15
