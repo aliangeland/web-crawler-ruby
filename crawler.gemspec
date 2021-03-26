@@ -9,7 +9,7 @@ Gem::Specification.new do |spec|
   spec.email = ["alii.angeland@gmail.com"]
 
   spec.summary = "Ruby Web Crawler"
-  spec.description = "A Simple web crawler written in ruby"
+  spec.description = "A simple web crawler written in ruby"
   spec.homepage = "https://github.com/aliangeland"
   spec.license = "MIT"
   spec.required_ruby_version = Gem::Requirement.new(">= 2.4.0")
@@ -17,8 +17,8 @@ Gem::Specification.new do |spec|
   spec.metadata["allowed_push_host"] = "http://mygemserver.com"
 
   spec.metadata["homepage_uri"] = spec.homepage
-  spec.metadata["source_code_uri"] = "https://github.com/aliangeland/simple-ruby-web-crawler"
-  spec.metadata["changelog_uri"] = "https://github.com/aliangeland/simple-ruby-web-crawler/changelog.md"
+  spec.metadata["source_code_uri"] = "https://github.com/aliangeland/web-crawler-ruby"
+  spec.metadata["changelog_uri"] = "https://github.com/aliangeland/web-crawler-ruby/changelog.md"
 
   # Specify which files should be added to the gem when it is released.
   # The `git ls-files -z` loads the files in the RubyGem that have been added into git.
