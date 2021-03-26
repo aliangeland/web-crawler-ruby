@@ -1,4 +1,4 @@
-# frozen_string_literal: true
+# frozen_string_literal: false
 
 require_relative "crawler/version"
 require_relative "crawler/database"
@@ -8,8 +8,6 @@ require "celluloid/autostart"
 require "mechanize"
 
 module Crawler
-  class Error < StandardError; end
-
   class CrawlerAgent
     include Celluloid
 

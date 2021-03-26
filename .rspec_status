@@ -1,0 +1,8 @@
+example_id                      | status | run_time        |
+------------------------------- | ------ | --------------- |
+./spec/crawler_spec.rb[1:1]     | passed | 0.0022 seconds  |
+./spec/crawler_spec.rb[1:2:1:1] | passed | 0.00324 seconds |
+./spec/crawler_spec.rb[1:2:1:2] | passed | 0.00394 seconds |
+./spec/crawler_spec.rb[1:2:1:3] | passed | 0.0135 seconds  |
+./spec/crawler_spec.rb[1:2:2:1] | passed | 1.35 seconds    |
+./spec/crawler_spec.rb[1:2:2:2] | passed | 0.3927 seconds  |
