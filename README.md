@@ -1,12 +1,30 @@
 # Crawler
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/crawler`. To experiment with that code, run `bin/console` for an interactive prompt.
+A simple web crawler written in Ruby
 
-TODO: Delete this and the text above, and describe your gem
+## Installation (using docker *RECOMMENDED)
 
-## Installation
+Navigate to project's root then execute:
+
+    $ docker-compose build
+
+And then:
+
+    $ docker-compose up -d
+
+Note: you should already have installed docker on your system
+
+Note: for removing containers you can execute:
+
+    $ docker-compose down -v
+
+Note: to see crawled products, you could check recently added .db file to your project's root folder after running containers. also you can check docker's console too.   
+
+## Installation (as a gem)
 
 Add this line to your application's Gemfile:
+
+bundle install
 
 ```ruby
 gem 'crawler'
@@ -22,7 +40,7 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+Crawler gem can be used as a crawler for your website (code should be tailored to your taste)
 
 ## Development
 
@@ -32,7 +50,7 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/crawler.
+Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/web-crawler-ruby.
 
 ## License
 
