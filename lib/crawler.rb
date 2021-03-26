@@ -11,6 +11,8 @@ module Crawler
   class CrawlerAgent
     include Celluloid
 
+    attr_accessor :mechanize, :db, :cache
+
     def initialize()
       @mechanize = Mechanize.new
       @db = Crawler::DB.new
@@ -21,15 +23,15 @@ module Crawler
       # gets product items of a listing page
       # threads have been used for better performance
       Celluloid::Future.new {
-        page = @mechanize.get(link)
+        page = mechanize.get(link)
         page.search(".product-items").css(".product-item-link").each do |a|
           # Celluloid::Future.new {
-          if $cache.exists("visitedLinks", a[:href])
+          if cache.exists("visitedLinks", a[:href])
             # puts "SORRY this link is dup: #{a[:href]}"
           else
-            $cache.addToSet("visitedLinks", link)
+            cache.addToSet("visitedLinks", link)
             # gets each product-item's details
-            page = @mechanize.get(a[:href])
+            page = mechanize.get(a[:href])
             if page.at_css(".product.attribute.description")
               printPage(page)
             end
@@ -40,8 +42,8 @@ module Crawler
 
     def crawl(link)
       # caches every visited link so that it doesn't crawl it twice
-      @cache.addToSet("visitedLinks", link)
-      page = @mechanize.get(link)
+      cache.addToSet("visitedLinks", link)
+      page = mechanize.get(link)
 
       # checks the page if it has a product and extracts it
       if page.at_css(".product.attribute.description")
@@ -66,7 +68,7 @@ module Crawler
 
       # recursive call
       page.search("a").each do |a|
-        if @cache.exists("visitedLinks", a[:href])
+        if cache.exists("visitedLinks", a[:href])
         else
           return crawl(a[:href])
         end
@@ -77,7 +79,7 @@ module Crawler
 
     def printPage(page)
       productName = page.search(".page-title").at("span").text
-      if @cache.exists("products", productName)
+      if cache.exists("products", productName)
       else
         productPrice = page.search(".price-wrapper").at("span").text
         productDescription = page.search(".description").at(".value").text
@@ -111,11 +113,11 @@ module Crawler
         puts "--------------------------------------"
 
         # caches product's name
-        @cache.addToSet("products", productName)
+        cache.addToSet("products", productName)
 
         # save to DB
         formattedPrice = productPrice.gsub(/[^\d\.]/, "").to_f
-        @db.saveProduct(productName, formattedPrice, "USD", productDescription, productExtraInfo)
+        db.saveProduct(productName, formattedPrice, "USD", productDescription, productExtraInfo)
       end
     end
   end

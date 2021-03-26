@@ -1,9 +1,10 @@
 require "sqlite3"
+require "dotenv/load"
 
 module Crawler
   class DB
     def initialize()
-      @db = SQLite3::Database.open "crawler.db"
+      @db = SQLite3::Database.open ENV["DB_NAME"]
       @db.execute "CREATE TABLE IF NOT EXISTS products(Id INTEGER PRIMARY KEY AUTOINCREMENT, name TEXT, price FLOAT, currency TEXT, description TEXT, extra TEXT)"
     end
 

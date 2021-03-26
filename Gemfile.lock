@@ -12,6 +12,7 @@ GEM
     diff-lcs (1.4.4)
     domain_name (0.5.20190701)
       unf (>= 0.0.5, < 1.0.0)
+    dotenv (2.7.6)
     http-cookie (1.0.3)
       domain_name (~> 0.5)
     mechanize (2.7.7)
@@ -64,6 +65,7 @@ PLATFORMS
 DEPENDENCIES
   celluloid
   crawler!
+  dotenv
   mechanize
   minitest (~> 5.0)
   nokogiri

@@ -1,0 +1,24 @@
+version: "3.9"
+services:
+  redis:
+    image: redis
+    container_name: cache
+    # volumes:
+    #   - ./redis.conf:/usr/local/etc/redis/redis.conf
+    command: redis-server
+    ports:
+      - "6379:6379"
+  app:
+    image: "crawler-app"
+    build:
+      context: .
+      dockerfile: .docker/web/Dockerfile
+    ports:
+      - "3000:3000"
+    command: ruby ./examples/crawler.rb
+    volumes:
+      - ./:/myapp
+    environment:
+      REDIS_HOST: "redis"
+      REDIS_PORT: 6379
+      DB_NAME: "crawler.db"

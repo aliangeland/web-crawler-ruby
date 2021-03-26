@@ -20,3 +20,5 @@ gem "sqlite3"
 gem "redis"
 
 gem "celluloid"
+
+gem "dotenv"
